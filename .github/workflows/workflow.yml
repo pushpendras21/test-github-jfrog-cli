@@ -1,5 +1,5 @@
 name: "JFrog CLI Example"
-on: workflow_dispatch
+on: push
 
 jobs:
   build:
