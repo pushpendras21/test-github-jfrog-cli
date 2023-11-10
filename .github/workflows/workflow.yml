@@ -5,6 +5,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v3
         env:
@@ -13,9 +16,6 @@ jobs:
           # JFrog Platform access token  
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
     
-      - name: Checkout
-        uses: actions/checkout@v3
-
       - name: Run JFrog CLI
         run: |
            #Ping the server
